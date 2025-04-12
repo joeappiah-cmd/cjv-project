@@ -9,7 +9,7 @@ const MovieDetails = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`https://streamify-api-49k2.onrender.com/movies/${id}`)
+    fetch(`http://localhost:8080/api/movies/${id}`)
       .then((response) => {
         if (!response.ok) throw new Error("Movie not found");
         return response.json();
@@ -36,13 +36,13 @@ const MovieDetails = () => {
         ⬅ Back
       </button>
       <div className="flex flex-col md:flex-row items-center gap-6">
-        <img src={movie.poster} alt={movie.title} className="w-64 h-auto rounded-lg shadow-md" />
+        <img src={movie.largePoster} alt={movie.title} className="w-64 h-auto rounded-lg shadow-md" />
         <div>
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white">{movie.title}</h1>
           <p className="text-gray-600 dark:text-gray-300">
-            {movie.year} | {movie.genre} | Rated: {movie.rated}
+            {movie.year} | {movie.genre} | rent:$ {movie.rentPrice} | Buy:$ {movie.buyPrice}
           </p>
-          <p className="mt-3 text-gray-700 dark:text-gray-300">{movie.description}</p>
+          <p className="mt-3 text-gray-700 dark:text-gray-300">{movie.synopsis}</p>
         
         </div>
       </div>

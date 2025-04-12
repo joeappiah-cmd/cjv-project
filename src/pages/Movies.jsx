@@ -5,7 +5,7 @@ const Movies = () => {
   const [movies, setMovies] = useState([]);
   const navigate =useNavigate();
   useEffect(() => {
-    fetch("https://streamify-api-49k2.onrender.com/Movies")
+    fetch("http://localhost:8080/api/movies/all")
       .then((response) => response.json())
       .then((data) => setMovies(data))
       .catch((error) => console.error("Error fetching movies:", error));
@@ -27,7 +27,7 @@ const Movies = () => {
               <Link to={`/movies/${movie.id}`} key={movie.id}>
                 <div className="relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer aspect-[2/3]">
                   <img
-                    src={movie.poster}
+                    src={movie.largePoster}
                     alt={movie.title}
                     className="w-full h-full object-cover"
                   />

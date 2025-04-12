@@ -5,7 +5,7 @@ const TvShows = () => {
   const [tvShows, setTvShows] = useState([]);
 
   useEffect(() => {
-    fetch("https://streamify-api-49k2.onrender.com/TvShows")
+    fetch("http://localhost:8080/api/tvshows/all")
       .then((response) => response.json())
       .then((data) => setTvShows(data))
       .catch((error) => console.error("Error fetching TV shows:", error));
@@ -21,7 +21,7 @@ const TvShows = () => {
               <Link to={`/tvshows/${show.id}`} key={show.id}>
                 <div className="relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer aspect-[2/3]">
                   <img
-                    src={show.poster}
+                    src={show.largePoster}
                     alt={show.title}
                     className="w-full h-full object-cover"
                   />

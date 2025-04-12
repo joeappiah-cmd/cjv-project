@@ -9,7 +9,7 @@ const TvShowsFeatures = () => {
   useEffect(() => {
     const fetchtvShows = async () => {
       try {
-        const response = await fetch('https://streamify-api-49k2.onrender.com/TvShows');
+        const response = await fetch('http://localhost:8080/api/tvshows/all');
         const data = await response.json();
         settvShows(data);
         setLoading(false);
@@ -42,7 +42,7 @@ const TvShowsFeatures = () => {
           >
             <div className="w-full h-64 mb-4">
               <img
-                src={tvShows.poster}
+                src={tvShows.largePoster}
                 alt={tvShows.title}
                 className="w-full h-full object-cover rounded-lg"
               />

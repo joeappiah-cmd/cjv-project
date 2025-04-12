@@ -9,7 +9,7 @@ const TvShowsDetails = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`https://streamify-api-49k2.onrender.com/TvShows/${id}`)
+    fetch(`http://localhost:8080/api/tvshows/${id}`)
       .then((response) => {
         if (!response.ok) throw new Error("TV Show not found");
         return response.json();
@@ -36,14 +36,14 @@ const TvShowsDetails = () => {
         ⬅ Back
       </button>
       <div className="flex flex-col md:flex-row items-center gap-6">
-        <img src={tvShow.poster} alt={tvShow.title} className="w-64 h-auto rounded-lg shadow-md" />
+        <img src={tvShow.largePoster} alt={tvShow.title} className="w-64 h-auto rounded-lg shadow-md" />
         <div>
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white">{tvShow.title}</h1>
           <p className="text-gray-600 dark:text-gray-300">
-            {tvShow.year} | {tvShow.genre} | Rated: {tvShow.rated}
+            {tvShow.year} | {tvShow.genre}  | rent:$ {tvShow.rentPrice} | Buy:$ {tvShow.buyPrice}
           </p>
-          <p className="mt-3 text-gray-700 dark:text-gray-300">{tvShow.description}</p>
-          <p className="mt-2 font-medium text-gray-900 dark:text-white">⭐ {tvShow.rating}</p>
+          <p className="mt-3 text-gray-700 dark:text-gray-300">{tvShow.synopsis}</p>
+         
         </div>
       </div>
     </div>

@@ -9,12 +9,12 @@ const MovieFeatures = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await fetch('https://streamify-api-49k2.onrender.com/Movies');
+        const response = await fetch('http://localhost:8080/api/movies/all');
         const data = await response.json();
         settvShows(data);
         setLoading(false);
       } catch (err) {
-        setError('Failed to fetch tvShows');
+        setError('Failed to fetch Movies');
         setLoading(false);
       }
     };
@@ -42,7 +42,7 @@ const MovieFeatures = () => {
           >
             <div className="w-full h-64 mb-4">
               <img
-                src={movies.poster}
+                src={movies.largePoster}
                 alt={movies.title}
                 className="w-full h-full object-cover rounded-lg"
               />
