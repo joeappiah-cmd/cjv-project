@@ -9,7 +9,7 @@ const TvShowsDetails = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/tvshows/${id}`)
+    fetch(`https://assignment-2-kroa.onrender.com/api/tvshows/${id}`)
       .then((response) => {
         if (!response.ok) throw new Error("TV Show not found");
         return response.json();

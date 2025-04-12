@@ -19,8 +19,8 @@ const SearchResults = () => {
       setLoading(true);
       setError(null);
       try {
-        const movieRes = await fetch(`http://localhost:8080/api/movies/search?title=${encodeURIComponent(searchQuery)}`);
-        const tvShowRes = await fetch(`http://localhost:8080/api/tvshows/search?title=${encodeURIComponent(searchQuery)}`);
+        const movieRes = await fetch(`https://assignment-2-kroa.onrender.com/api/movies/search?title=${encodeURIComponent(searchQuery)}`);
+        const tvShowRes = await fetch(`https://assignment-2-kroa.onrender.com/api/tvshows/search?title=${encodeURIComponent(searchQuery)}`);
 
         if (!movieRes.ok || !tvShowRes.ok) throw new Error("Error fetching search results");
 

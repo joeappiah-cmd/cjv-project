@@ -21,7 +21,7 @@ const Register = () => {
     const userData = { firstName, lastName, email, password };
   
     try {
-      const response = await fetch("http://localhost:8080/api/accounts/signup", {
+      const response = await fetch("https://assignment-2-kroa.onrender.com/api/accounts/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData),

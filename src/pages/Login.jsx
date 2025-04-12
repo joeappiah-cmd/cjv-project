@@ -10,7 +10,7 @@ const Login = () => {
     e.preventDefault();
   
     try {
-      const response = await fetch("http://localhost:8080/api/accounts/signin", {
+      const response = await fetch("https://assignment-2-kroa.onrender.com/api/accounts/signin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -20,7 +20,7 @@ const Login = () => {
         const data = await response.json();
         localStorage.setItem("user", JSON.stringify(data)); // Store user data in localStorage
         alert("Login successful!");
-        navigate("/dasboard");
+        navigate("/dashboard");
       } else {
         alert("Invalid email or password");
       }

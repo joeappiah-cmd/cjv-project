@@ -9,7 +9,7 @@ const Header = () => {
     e.preventDefault();
     if (searchQuery.trim() === "") return;
 
-    // Redirect to search results page with query parameter
+ 
     navigate(`/search?query=${encodeURIComponent(searchQuery)}`);
   };
 

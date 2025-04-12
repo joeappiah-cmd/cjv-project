@@ -9,7 +9,7 @@ const MovieDetails = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/movies/${id}`)
+    fetch(`https://assignment-2-kroa.onrender.com/api/movies/${id}`)
       .then((response) => {
         if (!response.ok) throw new Error("Movie not found");
         return response.json();

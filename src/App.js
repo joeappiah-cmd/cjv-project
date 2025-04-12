@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 import MovieDetails from "./pages/MovieDetails";
 import TvShowDetails from "./pages/TvShowsDetails"; 
 import Dashboard from "./pages/Dashboard";
-import SearchResults from "./pages/SearchResults"; // Import the search results page
+import SearchResults from "./pages/SearchResults"; 
 
 function App() {
   return (
@@ -25,8 +25,8 @@ function App() {
         <Route path="/tvshows/:id" element={<TvShowDetails />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/search" element={<SearchResults />} /> {/* Add the search results route */}
+        <Route path="/Dashboard" element={<Dashboard />} />
+        <Route path="/SearchResults" element={<SearchResults />} /> 
         <Route path="*" element={<Error404 />} />
       </Routes>
       <Footer />

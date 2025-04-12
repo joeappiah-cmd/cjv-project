@@ -9,7 +9,7 @@ const MovieFeatures = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/movies/all');
+        const response = await fetch('https://assignment-2-kroa.onrender.com/api/movies/all');
         const data = await response.json();
         settvShows(data);
         setLoading(false);

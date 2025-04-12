@@ -5,7 +5,7 @@ const TvShows = () => {
   const [tvShows, setTvShows] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/tvshows/all")
+    fetch("https://assignment-2-kroa.onrender.com/api/tvshows/all")
       .then((response) => response.json())
       .then((data) => setTvShows(data))
       .catch((error) => console.error("Error fetching TV shows:", error));

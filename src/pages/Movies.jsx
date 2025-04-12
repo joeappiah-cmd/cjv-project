@@ -5,7 +5,7 @@ const Movies = () => {
   const [movies, setMovies] = useState([]);
   const navigate =useNavigate();
   useEffect(() => {
-    fetch("http://localhost:8080/api/movies/all")
+    fetch("https://assignment-2-kroa.onrender.com/api/movies/all")
       .then((response) => response.json())
       .then((data) => setMovies(data))
       .catch((error) => console.error("Error fetching movies:", error));
